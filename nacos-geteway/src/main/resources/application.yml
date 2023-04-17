@@ -1,0 +1,22 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: nacos-order
+          uri: lb://nacos-order
+          predicates:
+            - Path=/order/**
+#          filters:
+#            - AddRequestHeader=Truth, Itcast is freaking awsome!
+        - id: nacos-stock
+          uri: lb://nacos-stock
+          predicates:
+            - Path=/stock/**
+      default-filters:
+        - AddRequestHeader=Truth, Itcast is freaking awsome!

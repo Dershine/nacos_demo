@@ -1,0 +1,6 @@
+# Project exclude paths
+/nacos-geteway/target/
+/nacos-order/target/
+/nacos-stock/target/
+/nacos-stock2/target/
+/nacos_config_test/target/
